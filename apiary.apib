@@ -1,13 +1,76 @@
 FORMAT: 1A
-HOST: http://polls.apiblueprint.org/
+HOST: http://api.enshere.io/
 
-# Brent Garner
+# Ensphere Portal
 
-Ensphere portal
-
+This is the API documentation for the Ensphere Portal
 
 ## Communications [/communications]
-el
+
+### Count of All Active Communications [GET]
++ Request (application/json)
+
+        {
+            "location": 314 
+        }
+        
++ Response 201 (application/json)
+
+        {
+            "count": 10
+        }
+
+### List Communication Categories [GET]
+Returns a list of Communicaitons Category names, IDs and other meta info
+
+### Count of Active Communications in Each Category [GET]
+
+### List All Active Communications [GET]
+Returns a list of all active communication IDs
+
+### Get Specified Communication [GET]
+Returns a single communicaiton
++ Request (application/json)
+
+        {
+            "id": 123 
+        }
+
++ Response 201 (application/json)
+
+        [
+            {
+                "id": 123,
+                "created_at": "2015-08-05T08:40:51.620Z",
+                "updated_at": "2015-08-05T08:40:51.620Z",
+                "deleted_at": "",
+                "start": "2015-08-05T08:40:51.620Z",
+                "end": "2015-08-05T08:40:51.620Z",
+                "sender": 3,
+                "importance": 1,
+                "is_draft": 0,
+                "subject": "This is a Sample Communication Title",
+                "category": 9,
+                "next": 124,
+                "previous": 122,
+                "tags": [
+                    {
+                        "id": 1
+                    },
+                    {
+                        "id": 3
+                    },
+                    {
+                        "id": 7
+                    }
+                ],
+                "body": "<p>This is an examples of the body of a communication</p>"
+                
+                
+            }
+        ]
+
+
 
 ## Documents [/documents]
 
@@ -29,6 +92,7 @@ el
 
 ## Features [/features]
 
+## Search [/search]
 
 ## Analytics [/analytics]
 
